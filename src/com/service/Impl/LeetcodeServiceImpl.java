@@ -1,7 +1,6 @@
 package com.service.Impl;
 
 import com.service.LeetcodeService;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,5 +16,19 @@ public class LeetcodeServiceImpl implements LeetcodeService {
             map.put(nums[i],i);
         }
         return new int[0];
+    }
+
+    @Override
+    public boolean isPalindrome(int x) {
+        if(x<0){
+            return false;
+        }
+        int rev = 0;
+        int n = x;
+        while(n != 0){
+            rev = rev*10+n%10;
+            n = n/10;
+        }
+        return x==rev;
     }
 }
